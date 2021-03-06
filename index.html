@@ -1,0 +1,196 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" /> <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> <link href='https://use.fontawesome.com/releases/v5.8.2/css/all.css' rel='stylesheet' type='text/css'/> <style scoped="scoped" type="text/css"> /* CSS Multiple Whatsapp Chat */ #whatsapp-chat{position:fixed;background:#fff;width:350px;border-radius:10px;box-shadow:0 1px 15px rgba(32,33,36,.28);bottom:90px;right:30px;overflow:hidden;z-index:99;animation-name:showchat;animation-duration:1s;transform:scale(1)}a.blantershow-chat{background:linear-gradient(to right top,#6f96f3,#164ed2);color:#fff;position:fixed;z-index:98;bottom:55px;right:1px;font-size:10px;padding:10px 20px;border-radius:30px;box-shadow:0 1px 15px rgba(32,33,36,.28)}a.blantershow-chat i{transform:scale(1.2);margin:0 10px 0 0}.header-chat{background:linear-gradient(to right top,#6f96f3,#164ed2);color:#fff;padding:20px}.header-chat h3{margin:0 0 10px}.header-chat p{font-size:14px;line-height:1.7;margin:0}.info-avatar{position:relative}.info-avatar img{border-radius:100%;width:50px;float:left;margin:0 10px 0 0}.info-avatar:before{content:'\f232';z-index:1;font-family:"Font Awesome 5 Brands";background:#23ab23;color:#fff;padding:4px 5px;border-radius:100%;position:absolute;top:30px;left:30px}a.informasi{padding:20px;display:block;overflow:hidden;animation-name:showhide;animation-duration:2.5s}a.informasi:hover{background:#f1f1f1}.info-chat span{display:block}#get-label,span.chat-label{font-size:12px;color:#888}#get-nama,span.chat-nama{margin:5px 0 0;font-size:15px;font-weight:700;color:#222}#get-label,#get-nama{color:#fff}span.my-number{display:none}.blanter-msg{color:#444;padding:20px;font-size:12.5px;text-align:center;border-top:1px solid #ddd}textarea#chat-input{border:none;font-family:'Arial',sans-serif;width:100%;height:20px;outline:none;resize:none}a#send-it{color:#555;width:40px;margin:-5px 0 0 5px;font-weight:700;padding:8px;background:#eee;border-radius:10px}.first-msg{background:#f5f5f5;padding:30px;text-align:center}.first-msg span{background:#e2e2e2;color:#333;font-size:14.2px;line-height:1.7;border-radius:10px;padding:15px 20px;display:inline-block}.start-chat .blanter-msg{display:flex}#get-number{display:none}a.close-chat{position:absolute;top:5px;right:15px;color:#fff;font-size:30px}@keyframes showhide{from{transform:scale(.5);opacity:0}}@keyframes showchat{from{transform:scale(0);opacity:0}}@media screen and (max-width:480px){#whatsapp-chat{width:auto;left:5%;right:5%;font-size:80%}}.hide{display:none;animation-name:showhide;animation-duration:1.5s;transform:scale(1);opacity:1}.show{display:block;animation-name:showhide;animation-duration:1.5s;transform:scale(1);opacity:1} </style> <div id='whatsapp-chat' class='hide'> <div class='header-chat'> <div class='head-home'><h3>Hello!</h3> <p>Klik salah satu CS kami untuk chat via WhatsApp atau kirim email ke amimelga2@gmail.com</p></div> <div class='get-new hide'><div id='get-label'></div><div id='get-nama'></div></div></div> <div class='home-chat'> <!-- Info Contact Start --> <a class='informasi' href='javascript:void' title='Chat Whatsapp'> <div class='info-avatar'><img src='https://2.bp.blogspot.com/-y6xNA_8TpFo/XXWzkdYk0MI/AAAAAAAAA5s/RCzTBJ_FbMwVt5AEZKekwQqiDNqdNQJjgCLcBGAs/s70/supportmale.png'/></div> <div class='info-chat'> <span class='chat-label'>Info and Support</span> <span class='chat-nama'>Customer Service 1</span> </div><span class='my-number'>6281273344243</span> </a> <!-- Info Contact End --> <!-- Info Contact Start --> <a class='informasi' href='javascript:void' title='Chat Whatsapp'> <div class='info-avatar'><img src='https://4.bp.blogspot.com/-X1Xs2iRKabY/XXWzkqQ-iDI/AAAAAAAAA5w/HSyhR0gIXvUzlAx5XgaZzmlrCJkTgrOFQCLcBGAs/s70/supportfemale.png'/></div> <div class='info-chat'> <span class='chat-label'>Sales Representative</span> <span class='chat-nama'>Customer Service 2</span> </div><span class='my-number'>6281273344243</span> </a> <!-- Info Contact End --> <div class='blanter-msg'>Hubungi kami di <b>+6281273344243</b> dari jam <i>09:00WIB - 21:00WIB</i></div></div> <div class='start-chat hide'> <div class='first-msg'><span>Hello! Ada yang bisa kami bantu? </span></div> <div class='blanter-msg'><textarea id='chat-input' placeholder='Write a response' maxlength='120' row='1'></textarea> 
+
+<a href='https://api.whatsapp.com/send?phone=6281273344243;' id='send-it'>Kirim</a></div></div> 
+
+<div id='get-number'></div><a class='close-chat' href='javascript:void'>�</a> </div> <a class='blantershow-chat' href='javascript:void' title='Show Chat'><i class='fab fa-whatsapp'></i>Chat dengan kami disini </a> <script type='text/javascript'> $(document).on("click","#send-it",function(){var a=document.getElementById("chat-input");if(""!=a.value){var b=$("#get-number").text(),c=document.getElementById("chat-input").value,d="https://api.whatsapp.com/send",e=b,f="&text="+c;if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))var d="whatsapp://send";var g=d+"?phone="+e+f;window.open(g, '_blank')}}),$(document).on("click",".informasi",function(){document.getElementById("get-number").innerHTML=$(this).children(".my-number").text(),$(".start-chat,.get-new").addClass("show").removeClass("hide"),$(".home-chat,.head-home").addClass("hide").removeClass("show"),document.getElementById("get-nama").innerHTML=$(this).children(".info-chat").children(".chat-nama").text(),document.getElementById("get-label").innerHTML=$(this).children(".info-chat").children(".chat-label").text()}),$(document).on("click",".close-chat",function(){$("#whatsapp-chat").addClass("hide").removeClass("show")}),$(document).on("click",".blantershow-chat",function(){$("#whatsapp-chat").addClass("show").removeClass("hide")}); </script>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<style>
+/* Make the image fully responsive */
+.carousel-inner img {
+width: %;
+height: %;
+}
+</style>
+</head>
+<body>
+
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+<!-- Indicators -->
+<ul class="carousel-indicators">
+<li data-target="#demo" data-slide-to="1" class="active"></li>
+<li data-target="#demo" data-slide-to="2"></li>
+<li data-target="#demo" data-slide-to="3"></li>
+<li data-target="#demo" data-slide-to="4"></li>
+
+
+</ul>
+
+<!-- The slideshow -->
+<div class="carousel-inner">
+<div class="carousel-item active">
+<img src="https://i.ibb.co/F6rJXpW/Pics-Art-10-17-09-38-35.jpg" alt="pict1" width="100%" height="auto">
+</div>
+<div class="carousel-item">
+<img src="https://i.ibb.co/cQhYvYK/Pics-Art-10-17-09-52-56.png" alt="pict2" width="100%" height="auto">
+</div>
+<div class="carousel-item">
+<img src="https://i.ibb.co/87Nvh4L/Pics-Art-10-17-10-05-58.png" alt="pict2" width="100%" height="auto">
+</div>
+<div class="carousel-item">
+<a href="http://"><img src="https://i.ibb.co/dBJLSd4/Pics-Art-10-17-10-15-50.png"alt="pict3" width="100%" height="auto"></a>
+</div>
+
+</div>
+<br>
+<br>
+
+<!-- MENU LAYANANAN-->
+
+<img src="https://i.ibb.co/DpvssD9/Pics-Art-09-14-01-36-00.jpg" width="70%% height=">
+<br>
+<a class="carousel-control-prev" href="#demo" data-slide="prev">
+<span class="carousel-control-prev-icon"></span>
+<a class="carousel-control-next" href="#demo" data-slide="next">
+<span class="carousel-control-next-icon"></span>
+</a>
+</div>
+
+</body>
+</html>
+<a href="https://jgjk.mobi/p/5f8ad1265c8a1"><img src="https://i.ibb.co/m8XW4fF/Pics-Art-09-22-12-34-31.jpg"width="25%" alt="terdekat"/></a><a href="https://jgjk.mobi/p/5f8ad0f02de0a"><img src="https://i.ibb.co/dGQgDx4/Pics-Art-09-22-12-52-14.png"width="25%" alt="tarik"/></a><a href="https://jgjk.mobi/m/5f8ad286a37f0"><img src="
+https://i.ibb.co/2h3gxdn/Pics-Art-09-22-12-55-56.png"width="25%" alt="isisaldo"/></a><a href="https://jgjk.mobi/p/5f8ad0a2429d4"><img src="https://i.ibb.co/frFgsDG/Pics-Art-09-22-01-03-02.png"width="25%" alt="Toko"/></a></div>
+
+
+<a href="https://jgjk.mobi/m/5f8ad2bf4ae98"><img src="https://i.ibb.co/t4MF4NS/Pics-Art-09-22-02-36-10.png"width="25%" alt="terdekat"/></a><a href="https://jgjk.mobi/p/5f8d439f3ccfd"><img src="https://i.ibb.co/JFfdW4F/Pics-Art-10-17-07-19-30.png"width="25%" alt="tarik"/></a><a href="https://jgjk.mobi/act/topup"><img src="https://i.ibb.co/8xcdfWN/Pics-Art-10-17-07-22-28.png"width="25%" alt="isisaldo"/></a><a href="https://jgjk.mobi/p/5f8ac97549763"><img src="https://i.ibb.co/B22FC5h/Pics-Art-09-22-02-06-46.png"width="25%" alt="Toko"/></a></div>
+
+
+<!--SLIDESHOW BERITA-->
+
+<table border="0" style="width: 253px;">
+<tbody>
+<tr>
+<td><img border="0" data-original-height="2" data-original-width="100" src="https://i.ibb.co/nnMx8n0/Pics-Art-10-17-07-25-21.jpg" /></td>
+</tr>
+</tbody></table>
+<div style="border: 1px solid white; height: 210px; overflow-x: scroll; overflow-y: hidden; width: 350;">
+<table border="0" style="width: 740px;">
+<tbody>
+<tr>
+<td><div class="separator" style="clear: both; text-align: center;">
+<a href="https://merdeka.com/olahraga" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="3000" data-original-width="800" src="https://2.bp.blogspot.com/-0bvxTKZZ39s/XgHccWvVCFI/AAAAAAAAHBM/3pt4FMeGYHAEu98Bng3XF1FavtrLS7EeACLcBGAsYHQ/s1600/20191224_163030.jpg" /></a></div>
+</td>
+<td><div class="separator" style="clear: both; text-align: center;">
+<a href="https://merdeka.com/properti" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="3000" data-original-width="800" src="https://3.bp.blogspot.com/-lAt-tAKV4zY/XgHdx9-Hy2I/AAAAAAAAHBY/0vd_oADRcgwsF-64R8mk077LgJC7Ewq0QCLcBGAsYHQ/s1600/20191224_163052.jpg" /></a></div>
+</td>
+<td><div class="separator" style="clear: both; text-align: center;">
+<a href="https://merdeka.com/politik" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="3000" data-original-width="800" src="https://2.bp.blogspot.com/-GrE_3MzYW1g/XgHeQ2TzKTI/AAAAAAAAHBg/9mK4ktHCb4whjQ9Cj8_rAGSCHv-K0iKQwCLcBGAsYHQ/s1600/20191224_162956.jpg" /></a></div>
+</td>
+<td><div class="separator" style="clear: both; text-align: center;">
+<a href="https://merdeka.com/properti" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="3000" data-original-width="800" src="https://2.bp.blogspot.com/-l8C4_09f5pk/XgIFj7ot6gI/AAAAAAAAHDw/gK_k9e2dXU4KpXwa4rR-wotUYMf0HvToACLcBGAsYHQ/s1600/20191224_193054.jpg" /></a></div>
+</td>
+<td><div class="separator" style="clear: both; text-align: center;">
+<a href="https://merdeka.com/properti" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="3000" data-original-width="800" src="https://3.bp.blogspot.com/-LtHgug0nDoo/XgHewJUj4LI/AAAAAAAAHBw/gsNxQRBc4ZcprlDMGbBB6e8Q1HYwfv8aACLcBGAsYHQ/s1600/20191224_162931.jpg" /></a></div>
+</td>
+</tr>
+</tbody></table>
+</div>
+
+
+<!--SLIDESHOW PENDAFTARAN -->
+
+<table border="0" style="width: 249px;">
+<tbody>
+<tr>
+<td><img border="0" data-original-height="2" data-original-width="100" src="https://i.ibb.co/SVK0TXV/Pics-Art-09-14-09-13-29.jpg" /></td>
+</tr>
+</tbody></table>
+<div style="border: 1px solid white; height: 105px; overflow-x: scroll; overflow-y: hidden; width: 355;">
+<table border="0" style="width: 600px;">
+<tbody>
+<tr>
+<td><div class="separator" style="clear: both; text-align: center;">
+<a href="https://jgjk.mobi/act/driver" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="3000" data-original-width="800" src="https://i.ibb.co/JKK2rDC/Pics-Art-09-14-08-46-43.png" /></a></div>
+</td>
+<td><div class="separator" style="clear: both; text-align: center;">
+<a href="https://jgjk.mobi/act/partner" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="3000" data-original-width="800"src="https://i.ibb.co/Hrmj2Tr/Pics-Art-09-14-09-04-21.png" /></a></div>
+</td>
+</tr>
+</tbody></table>
+</div>
+
+
+<!--LIST TOP UP SALDO -->
+
+<table border="0" style="width: 325px;">
+<tbody>
+
+<tr>
+<td><div class="separator" style="clear: both; text-align: center;">
+<a href="https://jgjk.mobi/act/topup" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="5000" data-original-width="3800" src="https://i.ibb.co/cT1rHtg/Pics-Art-09-14-08-50-05.png" /></a></div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+<div class="css-fhktyf" style="bottom: 36px; box-sizing: inherit; color: rgba(0, 0, 0, 0.54); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; font-size: 14px; max-width: 500px; position: fixed; width: 500px; z-index: 5;">
+</div>
+<nav class="css-1nl0624" style="box-sizing: inherit; color: rgba(0, 0, 0, 0.54); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; font-size: 14px; padding-bottom: 56px;"><div class="unf-bottomnav css-10t7u6f-unf-bottomnav e17ws4me0" style="-webkit-box-pack: justify; align-items: flex-start; background-color: white; bottom: 0px; box-shadow: rgba(108, 114, 124, 0.16) 0px -2px 4px 0px; box-sizing: inherit; display: flex; flex-wrap: nowrap; height: 56px; justify-content: space-between; left: initial; margin: 0px auto; max-width: 360px; padding: 0px; position: fixed; width: 360px; z-index: 20;">
+
+<a href="https://jgjk.mobi/m/5f8abfe7494ae"><div aria-label="unf-bottomnav-item" class="unf-bottomnav__item unf-bottomnav__item--active css-okw8dh e17ws4me1" data-cy="bottomnavHome" data-testid="icnFooterHome" style="-webkit-box-align: center; -webkit-box-pack: center; align-items: center; box-sizing: inherit; color: #03ac0e; display: flex; flex-flow: column nowrap; justify-content: center; padding: 8px; position: relative; text-align: center; transition: color 0.2s ease-out; white-space: nowrap; width: 72px; z-index: 0;">
+<div class="unf-bottomnav__item-image css-1r1pvs1 e17ws4me2" style="box-sizing: inherit; height: 24px; margin: auto auto 4px; overflow: hidden; position: relative; width: 24px;">
+<img alt="Home" class="css-j4aiy7 e17ws4me3" crossorigin="anonymous" src="https://i.ibb.co/48MzJCv/Pics-Art-09-22-05-44-03.png" style="border-style: none; box-sizing: inherit; height: 24px; left: 12px; margin-right: 0px; margin-top: 0px; opacity: 1; position: absolute; top: 12px; transform: translate(-50%, -50%); transition: opacity 0.1s ease-out;" /></div>
+<div class="css-1n3jf0w-unf-heading ej53lua8" color="" style="box-sizing: inherit; color: rgba(49, 53, 59, 0.68); font-size: 10px; line-height: 16px; position: relative; text-decoration-line: initial;">
+Beranda</div>
+</div></a>
+
+<a href="https://jgjk.mobi/act/cart"><div aria-label="unf-bottomnav-item" class="unf-bottomnav__item css-1xk1am2 e17ws4me1" data-cy="bottomnavFeed" data-testid="icnFooterFeed" id="bottomnavFeed" style="-webkit-box-align: center; -webkit-box-pack: center; align-items: center; box-sizing: inherit; color: #31353b; display: flex; flex-flow: column nowrap; justify-content: center; padding: 8px; position: relative; text-align: center; transition: color 0.2s ease-out; white-space: nowrap; width: 72px; z-index: 0;">
+<div class="unf-bottomnav__item-image css-1r1pvs1 e17ws4me2" style="box-sizing: inherit; height: 24px; margin: auto auto 4px; overflow: hidden; position: relative; width: 24px;">
+<img alt="bantuan" class="css-j4aiy7 e17ws4me3" crossorigin="anonymous" src="https://i.ibb.co/HXcpLVB/Pics-Art-09-22-05-44-43.png" style="border-style: none; box-sizing: inherit; height: 24px; left: 12px; margin-right: 0px; margin-top: 0px; opacity: 1; position: absolute; top: 12px; transform: translate(-50%, -50%); transition: opacity 0.1s ease-out;" /></div>
+<div class="css-1n3jf0w-unf-heading ej53lua8" color="" style="box-sizing: inherit; color: rgba(49, 53, 59, 0.68); font-size: 10px; line-height: 16px; position: relative; text-decoration-line: initial;">
+Keranjang</div>
+</div></a>
+
+<a href="https://jgjk.mobi/p/5f8ada04e26d0"><div aria-label="unf-bottomnav-item" class="unf-bottomnav__item css-1xk1am2 e17ws4me1" data-cy="bottomnavCart" data-testid="icnFooterCart" style="-webkit-box-align: center; -webkit-box-pack: center; align-items: center; box-sizing: inherit; color: #31353b; display: flex; flex-flow: column nowrap; justify-content: center; padding: 8px; position: relative; text-align: center; transition: color 0.2s ease-out; white-space: nowrap; width: 72px; z-index: 0;">
+<div class="unf-bottomnav__item-image css-1r1pvs1 e17ws4me2" style="box-sizing: inherit; height: 24px; margin: auto auto 4px; overflow: hidden; position: relative; width: 24px;">
+<img alt="Keranjang" class="css-j4aiy7 e17ws4me3" crossorigin="anonymous" src="https://i.ibb.co/z5xWSrG/Pics-Art-09-22-05-45-40.png" style="border-style: none; box-sizing: inherit; height: 24px; left: 12px; margin-right: 0px; margin-top: 0px; opacity: 1; position: absolute; top: 12px; transform: translate(-50%, -50%); transition: opacity 0.1s ease-out;" /></div>
+<div class="css-1n3jf0w-unf-heading ej53lua8" color="" style="box-sizing: inherit; color: rgba(49, 53, 59, 0.68); font-size: 10px; line-height: 16px; position: relative; text-decoration-line: initial;">
+Panduan</div>
+</div></a>
+
+<a href="https://jgjk.mobi/act/account"><div aria-label="unf-bottomnav-item" class="unf-bottomnav__item css-1xk1am2 e17ws4me1" data-cy="bottomnavSignIn" data-testid="icnFooterMasuk" style="-webkit-box-align: center; -webkit-box-pack: center; align-items: center; box-sizing: inherit; color: #31353b; display: flex; flex-flow: column nowrap; justify-content: center; padding: 8px; position: relative; text-align: center; transition: color 0.2s ease-out; white-space: nowrap; width: 72px; z-index: 0;">
+<div class="unf-bottomnav__item-image css-1r1pvs1 e17ws4me2" style="box-sizing: inherit; height: 24px; margin: auto auto 4px; overflow: hidden; position: relative; width: 24px;">
+<img alt="Masuk" class="css-j4aiy7 e17ws4me3" crossorigin="anonymous" src="https://i.ibb.co/vBf6z7f/Pics-Art-09-22-05-46-20.png" style="border-style: none; box-sizing: inherit; height: 24px; left: 12px; margin-right: 0px; margin-top: 0px; opacity: 1; position: absolute; top: 12px; transform: translate(-50%, -50%); transition: opacity 0.1s ease-out;" /></div>
+<div class="css-1n3jf0w-unf-heading ej53lua8" color="" style="box-sizing: inherit; color: rgba(49, 53, 59, 0.68); font-size: 10px; line-height: 16px; position: relative; text-decoration-line: initial;">
+Akun</div>
+</div>
+</div></a>
+</nav>
